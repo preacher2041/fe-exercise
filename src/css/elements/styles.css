@@ -1,0 +1,103 @@
+/* With more detailed designs the variables below can be used to create spacing variables that work better with the grid */
+
+:root {
+    /* Base styles */
+    --spacing-base: 8px;
+    --font-base: 12px;
+    --border-default: 1px solid var(--border-colour);
+
+    /* Colors */
+    --black: #000000;
+    --light-grey: #DDDDDD;
+    --lighter-grey: #EEEEEE;
+    --red: #AA0000;
+
+    /* Text Colours */
+    --primary-text-colour: var(--black);
+    --secondary-text-colour: var(--light-grey);
+    --highlight-text-colour: var(--red);
+    --border-colour: var(--lighter-grey);
+
+    /* Font scale */
+    --h1: calc(var(--font-base) + 12);
+    --h2: calc(var(--font-base) + 10);
+    --h3: calc(var(--font-base) + 8);
+    --h4: calc(var(--font-base) + 6);
+    --h5: calc(var(--font-base) + 2);
+    --p: calc(var(--font-base));
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+p {
+    font-size: var(--p);
+}
+
+.comments-list {
+    margin: calc(var(--spacing-base) * 2) auto;
+    padding: 0 calc(var(--spacing-base) * 2);
+    width: 500px; /* See note above, can remove this magic number via better styles variables */
+}
+
+.comments-list__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.comments-list__sorting {
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.comments-list__button {
+    border-radius: var(--spacing-base);
+    border: var(--border-default);
+}
+
+.comments-list__button--selected {
+    background: var(--black);
+    color: var(--secondary-text-colour);
+}
+
+.comment-block {
+    border-bottom: var(--border-default);
+    padding: calc(var(--spacing-base) * 2) 0;
+}
+
+.comment-block__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.comment-block__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.comment-block__username {
+    font-size: var(--h3);
+    margin-right: calc(var(--spacing-base) * 2);
+}
+
+.comment-block__date {
+    font-size: calc(var(--spacing-base) * 2);
+    color: var(--secondary-text-colour);
+}
+
+.comment-block__likes{
+    color: var(--primary-text-colour);
+}
+
+.comment-block__body{
+    padding: calc(var(--spacing-base) * 2) 0;
+}
